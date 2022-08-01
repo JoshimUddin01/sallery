@@ -16,8 +16,12 @@
     justify-content: space-around;
 }
 
-button.btn.btn-primary {
+button.add {
     height: fit-content;    
     position: relative;
     top: 25px;
+}
+
+.modal_btn {
+    display: none!important;
 }
