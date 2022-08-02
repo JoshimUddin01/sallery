@@ -25,3 +25,7 @@ button.add {
 .modal_btn {
     display: none!important;
 }
+
+canvas#myChart {
+    margin-top: 100px;
+}
