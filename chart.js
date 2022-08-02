@@ -39,12 +39,22 @@ let add_btn = document.querySelector(".add");
 let employe_name = document.querySelector("#user_name");
 let salary_value = document.querySelector("#user_sallery");
 
+
+
+
 add_btn.addEventListener("click", function get_value(){
 
-        myChart.data.datasets[0].data.push(salary_value.value)
-        myChart.data.labels.push(employe_name.value)
-
-        myChart.update();
+        let regEx = /^[\+\-]?\d*\.?\d+(?:[Ee][\+\-]?\d+)?$/;
+        if (regEx.test(salary_value.value) === false) {
+            let modal_popup = document.querySelector(".modal_btn");
+            modal_popup.click();
+        }
+        else {
+                myChart.data.datasets[0].data.push(salary_value.value)
+                myChart.data.labels.push(employe_name.value)
+        
+                myChart.update();
+        }
     })
 
     salary_value.addEventListener("keydown",(e)=>{
@@ -52,3 +62,4 @@ add_btn.addEventListener("click", function get_value(){
            add_btn.click();
         }
     })
+
